@@ -1,5 +1,7 @@
 <template>
-    <BannerMain />
+    <AboutMain />
+    <AboutStory />
+    <AboutStoryText />
 </template>
 
 <script setup>

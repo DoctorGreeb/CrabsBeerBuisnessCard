@@ -44,6 +44,8 @@
     align-items: center;
     width: 100%;
     max-width: var(--container-7xl);
+      min-width: var(--container-md);
+    gap: 2rem;
 }
 
 
@@ -51,12 +53,10 @@
     display: flex;
     align-items: center;
     margin-left: 4rem;
-    scale: 2;
 }
 
 .logo img {
-    width: 100px;
-    height: 100px;
+  width: 250px;
 }
 
 .buttons {
@@ -66,6 +66,7 @@
 
 .link {
     margin-right: 1rem;
+        min-width: var(--container-xs);
 }
 
 .link a {

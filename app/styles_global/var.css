@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
   /* Fonts */
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
+  --font-rubik: "Rubik Dirt", sans-serif;
+  --font-victor: "Victor Mono", monospace;
+  --font-nunito: "Nunito", sans-serif;
   /* Colors */
   --color-red-600: oklch(57.7% .245 27.325);
   
@@ -46,6 +51,7 @@
 
   /* Spacing & Containers */
   --spacing: .25rem;
+  --container-xs: 4rem;
   --container-sm: 24rem;
   --container-md: 28rem;
   --container-lg: 32rem;
@@ -53,7 +59,7 @@
   --container-2xl: 42rem;
   --container-3xl: 48rem;
   --container-4xl: 56rem;
-  --container-7xl: 80rem;
+  --container-7xl: 150rem;
 
   /* Typography */
   --text-xs: .75rem;

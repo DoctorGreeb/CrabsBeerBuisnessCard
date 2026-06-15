@@ -47,9 +47,9 @@
         </div>
       </div>
       <div class="copyright">
-        <hr>
+        <hr />
         <p>© 2026 КрабсБир. Designed by DoctorGreeb</p>
-    </div>
+      </div>
     </div>
   </div>
 </template>
@@ -139,7 +139,7 @@
 
 p {
   font-size: var(--text-sm);
-  font-family: var(--font-sans);
+  font-family: var(--font-nunito);
   color: var(--color-amber-100);
 }
 
@@ -154,7 +154,7 @@ img {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-    padding-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 
 .social img {
@@ -164,9 +164,9 @@ img {
 
 .title {
   font-size: var(--text-2xl);
-  font-family: var(--font-sans);
+  font-family: var(--font-rubik);
   color: var(--color-amber-100);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
   padding-top: 2rem;
 }
 
@@ -177,7 +177,7 @@ hr {
 
 .copyright {
   font-size: var(--text-sm);
-  font-family: var(--font-sans);
+  font-family: var(--font-nunito);
   color: var(--color-amber-100);
   padding-top: 2rem;
   width: 100%;
