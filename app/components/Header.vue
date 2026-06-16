@@ -14,10 +14,10 @@
                     <NuxtLink to="/about">О нас</NuxtLink>
                 </div>
                 <div class="link">
-                    <NuxtLink to="/contact">Контакты</NuxtLink>
+                    <NuxtLink to="/contacts">Контакты</NuxtLink>
                 </div>
                 <div class="button">
-                    <NuxtLink to="/menu">Ассортимент</NuxtLink>
+                    <NuxtLink to="/assortment">Ассортимент</NuxtLink>
                 </div>
             </div>
         </div>
