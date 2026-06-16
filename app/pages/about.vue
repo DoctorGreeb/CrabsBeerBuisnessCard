@@ -1,7 +1,8 @@
 <template>
-    <AboutMain />
+    <AboutHead />
     <AboutStory />
     <AboutStoryText />
+    <AboutTeam />
 </template>
 
 <script setup>

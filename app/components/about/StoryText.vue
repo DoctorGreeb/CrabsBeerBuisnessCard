@@ -48,8 +48,11 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  width: 70%;
-  padding: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 1350px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .content-text {

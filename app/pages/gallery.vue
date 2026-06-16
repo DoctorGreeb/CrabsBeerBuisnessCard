@@ -1,6 +1,6 @@
 <template>
-    <BannerMain />
-    <BannerGallery />
+    <GalleryHead />
+    <GalleryMain />
 </template>
 
 <script setup>
