@@ -21,8 +21,9 @@
           <div class="links">
             <NuxtLink to="/">Главная</NuxtLink>
             <NuxtLink to="/about">О нас</NuxtLink>
-            <NuxtLink to="/contact">Контакты</NuxtLink>
-            <NuxtLink to="/menu">Ассортимент</NuxtLink>
+            <NuxtLink to="/contacts">Контакты</NuxtLink>
+            <NuxtLink to="/gallery">Галерея</NuxtLink>
+            <NuxtLink to="/assortment">Ассортимент</NuxtLink>
           </div>
         </div>
         <div class="block">
@@ -30,7 +31,9 @@
           <div class="contacts">
             <p>+7 (989) 501-85-85</p>
             <p>+7 (904) 501-86-86</p>
-            <p>Берберовская ул., 8, стр. 1, Ростов-на-Дону</p>
+            <NuxtLink to="https://yandex.ru/maps/-/CPxqAC5D">
+              <p>Берберовская ул., 8, стр. 1, Ростов-на-Дону</p>
+            </NuxtLink>
           </div>
         </div>
         <div class="block">

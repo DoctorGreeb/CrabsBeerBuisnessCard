@@ -16,6 +16,9 @@
                 <div class="link">
                     <NuxtLink to="/contacts">Контакты</NuxtLink>
                 </div>
+                <div class="link">
+                    <NuxtLink to="/gallery">Галерея</NuxtLink>
+                </div>
                 <div class="button">
                     <NuxtLink to="/assortment">Ассортимент</NuxtLink>
                 </div>
@@ -88,7 +91,7 @@
     margin-right: 1rem;
     background-color: var(--color-orange-500);
     border-radius: 50px;
-    padding: 0.7rem;
+    padding: 0.9rem;
 }
 
 .button a {
@@ -109,9 +112,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .wrapper {
-    height: 120px;
+    height: 140px;
   }
   
   .content {
