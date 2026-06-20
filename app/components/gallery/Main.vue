@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!-- Sticky фильтры -->
+    <!-- фильтры -->
     <div class="sticky-filters">
       <div class="gallery-container">
         <div class="filters-wrapper">
-          <button 
+          <button
             v-for="(category, index) in categories"
             :key="index"
             :class="['filter-btn', { active: activeCategory === category }]"
@@ -19,14 +19,14 @@
     <!-- Галерея -->
     <div class="gallery-container">
       <div class="gallery-grid">
-        <div 
+        <div
           v-for="(item, index) in filteredImages"
           :key="index"
           class="gallery-card"
           @click="openModal(index)"
         >
-          <img :src="item.src" :alt="item.title" class="gallery-image">
-          
+          <img :src="item.src" :alt="item.title" class="gallery-image" />
+
           <div class="gallery-overlay">
             <div class="gallery-overlay-content">
               <span class="category-tag">{{ item.category }}</span>
@@ -38,20 +38,22 @@
       </div>
     </div>
 
-    <!-- Modal Lightbox -->
+    <!-- модалка -->
     <div v-if="selectedIndex !== null" class="modal" @click="closeModal">
       <button class="modal-close" @click="closeModal">✕</button>
-      
+
       <button class="nav-btn left" @click.stop="prevImage">←</button>
 
       <div class="modal-content" @click.stop>
-        <img 
-          :src="filteredImages[selectedIndex].src" 
-          :alt="filteredImages[selectedIndex].title" 
+        <img
+          :src="filteredImages[selectedIndex].src"
+          :alt="filteredImages[selectedIndex].title"
           class="modal-image"
-        >
+        />
         <div class="modal-info">
-          <span class="category-tag">{{ filteredImages[selectedIndex].category }}</span>
+          <span class="category-tag">{{
+            filteredImages[selectedIndex].category
+          }}</span>
           <p class="modal-title">{{ filteredImages[selectedIndex].title }}</p>
         </div>
       </div>
@@ -62,85 +64,196 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
-const activeCategory = ref('Всё')
-const selectedIndex = ref(null)
+const activeCategory = ref("Всё");
+const selectedIndex = ref(null);
 
-const categories = ['Всё', 'Морепродукты', 'Закуски', 'Напитки', 'Атмосфера']
+const categories = ["Всё", "Морепродукты", "Закуски", "Напитки", "Атмосфера"];
 
 const images = [
   { src: "/gallery/sea/raki.webp", category: "Морепродукты", title: "Раки" },
-  { src: "/gallery/sea/crowfish.webp", category: "Морепродукты", title: "Живой рак" },
-  { src: "/gallery/sea/crowfish2.webp", category: "Морепродукты", title: "Аквариум с раками" },
-  { src: "/gallery/sea/sea_kit.webp", category: "Морепродукты", title: "Набор" },
-  { src: "/gallery/sea/shrimp.webp", category: "Морепродукты", title: "Креветки" },
-  { src: "/gallery/sea/shrimps.webp", category: "Морепродукты", title: "Букет креветок" },
+  {
+    src: "/gallery/sea/crowfish.webp",
+    category: "Морепродукты",
+    title: "Живой рак",
+  },
+  {
+    src: "/gallery/sea/crowfish2.webp",
+    category: "Морепродукты",
+    title: "Аквариум с раками",
+  },
+  {
+    src: "/gallery/sea/sea_kit.webp",
+    category: "Морепродукты",
+    title: "Набор",
+  },
+  {
+    src: "/gallery/sea/shrimp.webp",
+    category: "Морепродукты",
+    title: "Креветки",
+  },
+  {
+    src: "/gallery/sea/shrimps.webp",
+    category: "Морепродукты",
+    title: "Букет креветок",
+  },
 
-  { src: "/gallery/apetisers/asdsa.webp", category: "Закуски", title: "Орешки" },
-  { src: "/gallery/apetisers/XXXL (1).webp", category: "Закуски", title: "Сухарики" },
-  { src: "/gallery/apetisers/XXXL (2).webp", category: "Закуски", title: "Крафтовые закуски" },
-  { src: "/gallery/apetisers/XXXL.webp", category: "Закуски", title: "Кукурузные чипсы" },
+  {
+    src: "/gallery/apetisers/asdsa.webp",
+    category: "Закуски",
+    title: "Орешки",
+  },
+  {
+    src: "/gallery/apetisers/XXXL (1).webp",
+    category: "Закуски",
+    title: "Сухарики",
+  },
+  {
+    src: "/gallery/apetisers/XXXL (2).webp",
+    category: "Закуски",
+    title: "Крафтовые закуски",
+  },
+  {
+    src: "/gallery/apetisers/XXXL.webp",
+    category: "Закуски",
+    title: "Кукурузные чипсы",
+  },
 
-  { src: "/gallery/drinks/med.webp", category: "Напитки", title: "Медовые напитки" },
-  { src: "/gallery/drinks/rfdgredg.webp", category: "Напитки", title: "Холодные напитки" },
-  { src: "/gallery/drinks/sidr.webp", category: "Напитки", title: "Яблочные напитки" },
-  { src: "/gallery/drinks/XXXL (1).webp", category: "Напитки", title: "Крафтовый сидр" },
-  { src: "/gallery/drinks/XXXL (2).webp", category: "Напитки", title: "Большой объем" },
-  { src: "/gallery/drinks/XXXL (3).webp", category: "Напитки", title: "Большой выбор" },
-  { src: "/gallery/drinks/XXXL (4).webp", category: "Напитки", title: "Разные вкусы" },
-  { src: "/gallery/drinks/XXXL (5).webp", category: "Напитки", title: "Необычные напитки" },
-  { src: "/gallery/drinks/XXXL (6).webp", category: "Напитки", title: "Витрина с холодными напитками" },
-  { src: "/gallery/drinks/XXXL (7).webp", category: "Напитки", title: "Премиум крафт" },
-  { src: "/gallery/drinks/XXXL (8).webp", category: "Напитки", title: "Фруктовые вкусы" },
-  { src: "/gallery/drinks/XXXL.webp", category: "Напитки", title: "Эксклюзивные напитки" },
-  
+  {
+    src: "/gallery/drinks/med.webp",
+    category: "Напитки",
+    title: "Медовые напитки",
+  },
+  {
+    src: "/gallery/drinks/rfdgredg.webp",
+    category: "Напитки",
+    title: "Холодные напитки",
+  },
+  {
+    src: "/gallery/drinks/sidr.webp",
+    category: "Напитки",
+    title: "Яблочные напитки",
+  },
+  {
+    src: "/gallery/drinks/XXXL (1).webp",
+    category: "Напитки",
+    title: "Крафтовый сидр",
+  },
+  {
+    src: "/gallery/drinks/XXXL (2).webp",
+    category: "Напитки",
+    title: "Большой объем",
+  },
+  {
+    src: "/gallery/drinks/XXXL (3).webp",
+    category: "Напитки",
+    title: "Большой выбор",
+  },
+  {
+    src: "/gallery/drinks/XXXL (4).webp",
+    category: "Напитки",
+    title: "Разные вкусы",
+  },
+  {
+    src: "/gallery/drinks/XXXL (5).webp",
+    category: "Напитки",
+    title: "Необычные напитки",
+  },
+  {
+    src: "/gallery/drinks/XXXL (6).webp",
+    category: "Напитки",
+    title: "Витрина с холодными напитками",
+  },
+  {
+    src: "/gallery/drinks/XXXL (7).webp",
+    category: "Напитки",
+    title: "Премиум крафт",
+  },
+  {
+    src: "/gallery/drinks/XXXL (8).webp",
+    category: "Напитки",
+    title: "Фруктовые вкусы",
+  },
+  {
+    src: "/gallery/drinks/XXXL.webp",
+    category: "Напитки",
+    title: "Эксклюзивные напитки",
+  },
 
-  { src: "/gallery/ambience/ulica.webp", category: "Атмосфера", title: "Снаружи" },
-  { src: "/gallery/ambience/vibor.webp", category: "Атмосфера", title: "Стойка с крафтом" },
-  { src: "/gallery/ambience/XXXL (1).webp", category: "Атмосфера", title: "Интерьер" },
-  { src: "/gallery/ambience/XXXL (4).webp", category: "Атмосфера", title: "День открытия" },
-  { src: "/gallery/ambience/XXXL (9).webp", category: "Атмосфера", title: "Электронная витрина" },
+  {
+    src: "/gallery/ambience/ulica.webp",
+    category: "Атмосфера",
+    title: "Снаружи",
+  },
+  {
+    src: "/gallery/ambience/vibor.webp",
+    category: "Атмосфера",
+    title: "Стойка с крафтом",
+  },
+  {
+    src: "/gallery/ambience/XXXL (1).webp",
+    category: "Атмосфера",
+    title: "Интерьер",
+  },
+  {
+    src: "/gallery/ambience/XXXL (4).webp",
+    category: "Атмосфера",
+    title: "День открытия",
+  },
+  {
+    src: "/gallery/ambience/XXXL (9).webp",
+    category: "Атмосфера",
+    title: "Электронная витрина",
+  },
   { src: "/gallery/ambience/XXXL.webp", category: "Атмосфера", title: "Касса" },
-  { src: "/gallery/ambience/XXXL2.webp", category: "Атмосфера", title: "Сушёные закуски" },
-  { src: "/gallery/ambience/XXXL3.webp", category: "Атмосфера", title: "Витрина с рыбой" },
-
-]
+  {
+    src: "/gallery/ambience/XXXL2.webp",
+    category: "Атмосфера",
+    title: "Сушёные закуски",
+  },
+  {
+    src: "/gallery/ambience/XXXL3.webp",
+    category: "Атмосфера",
+    title: "Витрина с рыбой",
+  },
+];
 
 const filteredImages = computed(() => {
-  if (activeCategory.value === 'Всё') return images
-  return images.filter(img => img.category === activeCategory.value)
-})
+  if (activeCategory.value === "Всё") return images;
+  return images.filter((img) => img.category === activeCategory.value);
+});
 
 const openModal = (index) => {
-  selectedIndex.value = index
-  document.body.style.overflow = 'hidden'
-}
+  selectedIndex.value = index;
+  document.body.style.overflow = "hidden";
+};
 
 const closeModal = () => {
-  selectedIndex.value = null
-  document.body.style.overflow = 'visible'
-}
+  selectedIndex.value = null;
+  document.body.style.overflow = "visible";
+};
 
 const prevImage = () => {
-  if (selectedIndex.value > 0) selectedIndex.value--
-  else selectedIndex.value = filteredImages.value.length - 1
-}
+  if (selectedIndex.value > 0) selectedIndex.value--;
+  else selectedIndex.value = filteredImages.value.length - 1;
+};
 
 const nextImage = () => {
-  if (selectedIndex.value < filteredImages.value.length - 1) selectedIndex.value++
-  else selectedIndex.value = 0
-}
+  if (selectedIndex.value < filteredImages.value.length - 1)
+    selectedIndex.value++;
+  else selectedIndex.value = 0;
+};
 
 const handleKeydown = (e) => {
-  if (selectedIndex.value === null) return
-  if (e.key === 'ArrowLeft') prevImage()
-  if (e.key === 'ArrowRight') nextImage()
-  if (e.key === 'Escape') closeModal()
-}
+  if (selectedIndex.value === null) return;
+  if (e.key === "ArrowLeft") prevImage();
+  if (e.key === "ArrowRight") nextImage();
+  if (e.key === "Escape") closeModal();
+};
 
-onMounted(() => window.addEventListener('keydown', handleKeydown))
-onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
+onMounted(() => window.addEventListener("keydown", handleKeydown));
+onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
 </script>
 
 <style scoped>
@@ -186,7 +299,11 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
 }
 
 .filter-btn.active {
-  background: linear-gradient(to right, var(--color-amber-500), var(--color-orange-500));
+  background: linear-gradient(
+    to right,
+    var(--color-amber-500),
+    var(--color-orange-500)
+  );
   color: white;
 }
 
@@ -195,6 +312,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
+  padding-bottom: 2rem;
 }
 
 .gallery-card {
@@ -220,7 +338,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 45%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 45%);
   opacity: 0;
   transition: opacity 0.4s;
   display: flex;
@@ -258,7 +376,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
   opacity: 0.9;
 }
 
-/* Modal */
+/* модалка */
 .modal {
   position: fixed;
   inset: 0;
@@ -311,7 +429,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   width: 60px;
   height: 60px;
@@ -331,6 +449,10 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
   transform: translateY(-50%) scale(1.1);
 }
 
-.left  { left: 20px; }
-.right { right: 20px; }
+.left {
+  left: 20px;
+}
+.right {
+  right: 20px;
+}
 </style>

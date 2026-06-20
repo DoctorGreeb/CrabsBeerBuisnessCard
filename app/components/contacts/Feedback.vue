@@ -201,6 +201,10 @@ const handleSubmit = async () => {
   font-family: var(--font-nunito);
 }
 
+label {
+    font-family: var(--font-nunito);
+}
+
 /* Адаптив */
 @media (max-width: 640px) {
   .form-grid {
