@@ -1,5 +1,6 @@
 <template>
     <AssortmentHead />
+    <AssortmentMain />
 </template>
 
 <script setup>

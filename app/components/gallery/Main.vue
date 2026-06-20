@@ -17,7 +17,7 @@
     </div>
 
     <!-- Галерея -->
-    <div class="gallery-container py-12 pb-20">
+    <div class="gallery-container">
       <div class="gallery-grid">
         <div 
           v-for="(item, index) in filteredImages"
