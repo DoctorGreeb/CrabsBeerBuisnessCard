@@ -201,4 +201,46 @@ const images = [
   transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
 }
+
+@media (max-width: 1420px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 300px);
+    padding: 10px;
+    width: auto;
+    display: grid;
+    }
+  .gallery-container {
+    max-width: 1600px;
+    width: 1024px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 300px);
+    padding: 10px;
+    width: auto;
+    display: grid;
+  }
+  .gallery-container {
+    max-width: 700px;
+    width: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, 300px);
+    padding: 10px;
+    width: auto;
+    display: grid;
+  }
+  .gallery-container {
+    max-width: 600px;
+    width: 350px;
+  }
+  .gallery-title {
+    font-size: var(--text-4xl);
+  }
+}
 </style>

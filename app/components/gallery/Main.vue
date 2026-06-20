@@ -455,4 +455,88 @@ onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
 .right {
   right: 20px;
 }
+
+@media (min-width: 1921px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
+  .gallery-container {
+    max-width: 1800px;
+    width: 1700px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .gallery-container {
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .gallery-container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sticky-filters {
+    top: 0;
+  }
+
+  .filters-wrapper {
+    padding: 15px 10px;
+    justify-content: flex-start;
+  }
+
+  .filter-btn {
+    padding: 10px 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
+  }
+
+  .gallery-container {
+    max-width: 600px;
+  }
+
+  .gallery-card {
+    aspect-ratio: 1 / 1.1;
+  }
+
+  /* Модалка */
+  .modal-body {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .modal-photo {
+    height: 280px;
+  }
+
+  .modal-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .gallery-container {
+    max-width: 450px;
+  }
+  .filter-btn {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+}
 </style>

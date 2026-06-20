@@ -68,4 +68,27 @@
   margin-bottom: 0.5rem;
 
 }
+
+@media (max-width: 1024px) {
+  .title h1 {
+    font-size: var(--text-6xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    min-height: 320px;
+    min-width: 360px;
+  }
+  
+  .title h1 {
+    font-size: var(--text-5xl);
+    letter-spacing: 0.6rem;
+  }
+  
+  .description p {
+    font-size: var(--text-base);
+    padding: 0 1rem;
+  }
+}
 </style>

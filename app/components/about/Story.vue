@@ -121,4 +121,40 @@ p {
   color: var(--color-gray-600);
   font-weight: var(--font-weight-medium);
 }
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .content-advantages {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper-advantages {
+    height: auto;
+    padding: 2rem 0;
+    min-width: 360px;
+  }
+
+  .text {
+    align-items: flex-start;
+  }
+  
+  .icons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .icon-wrapper {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
+  }
+  
+  h2 {
+    font-size: var(--text-3xl);
+  }
+
+
+}
 </style>

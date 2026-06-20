@@ -214,6 +214,7 @@ label {
   .feedback-container {
     padding: 30px 20px;
     margin: 20px auto;
+    min-width: 400px;
   }
 }
 </style>

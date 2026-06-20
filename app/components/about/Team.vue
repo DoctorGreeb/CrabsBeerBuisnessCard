@@ -154,4 +154,51 @@ const playVideo = (index) => {
   font-size: 34px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+/* Адаптив */
+
+@media (max-width: 1360px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 300px);
+    gap: 1rem;
+    max-width: 1500px;
+    width: auto;
+    display: grid;
+  }
+  .video-wrapper {
+    max-height: 400px;
+  }
+  .title {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 200px);
+    gap: 1rem;
+    max-width: 1200px;
+    width: auto;
+    display: grid;
+  }
+  .video-wrapper {
+    max-height: 350px;
+  }
+  .title {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 240px);
+    padding: 10px;
+    width: auto;
+    display: grid;
+  }
+  
+  .video-wrapper {
+    max-height: 420px;
+  }
+}
 </style>

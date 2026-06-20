@@ -272,7 +272,7 @@ const comments = ref([
 ]);
 const newCommentText = ref('');
 
-// ====================== МОДАЛКА ======================
+// модалка
 const openModal = (index) => {
   selectedIndex.value = index;
   isModalOpen.value = true;
@@ -308,7 +308,7 @@ const deleteComment = (index) => {
   }
 };
 
-// Навигация (стрелки + клавиатура)
+// Навигация
 const prevImage = () => {
   if (selectedIndex.value > 0) selectedIndex.value--;
   else selectedIndex.value = filteredImages.value.length - 1;
@@ -547,24 +547,29 @@ onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
   color: var(--color-orange-600);
   font-weight: var(--font-weight-semibold);
   margin-bottom: 8px;
+  font-family: var(--font-nunito);
 }
 
 .modal-title {
   font-size: var(--text-4xl);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
   color: var(--color-gray-900);
   margin: 0 0 20px 0;
+  font-family: var(--font-rubik);
 }
 
 .modal-description {
   font-size: var(--text-lg);
   line-height: 1.65;
   color: var(--color-gray-700);
+  font-family: var(--font-nunito);
 }
 
 .comments-section {
   padding: 1rem 40px;
   background: var(--color-gray-50);
+  font-family: var(--font-nunito);
+  padding-bottom: 2rem;
 }
 
 .comments-section h3 {
@@ -572,7 +577,7 @@ onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
 }
 
 .comments-list {
-  max-height: 320px;
+  max-height: 268px;
   overflow-y: auto;
   margin-bottom: 20px;
 }
@@ -625,6 +630,7 @@ onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
   border-radius: 10px;
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
+  font-size: var(--text-sm);
 }
 
 @media (max-width: 768px) {
@@ -634,6 +640,99 @@ onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
   }
   .modal-photo {
     height: 320px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
+  .gallery-container {
+    max-width: 1800px;
+    width: 1700px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .gallery-container {
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .gallery-container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sticky-filters {
+    top: 0;
+  }
+
+  .filters-wrapper {
+    padding: 15px 10px;
+    justify-content: flex-start;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
+  }
+
+  .gallery-container {
+    max-width: 500px;
+  }
+
+  .gallery-card {
+    aspect-ratio: 1 / 1.1;
+  }
+
+  /* Модалка */
+  .modal-body {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    max-height: 600px;
+  }
+  .comments-list {
+    max-height: 160px;
+  }
+
+  .modal-photo {
+    height: 280px;
+  }
+
+  .modal-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .gallery-container {
+    max-width: 420px;
+  }
+  .filter-btn {
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+  .card-desc-name {
+    font-size: 12px;
+  }
+  .card-desc-text {
+    font-size: 12px;
+  }
+  .modal-content {
+    min-width: 400px;
   }
 }
 </style>

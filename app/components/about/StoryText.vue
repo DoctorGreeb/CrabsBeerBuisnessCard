@@ -97,4 +97,27 @@
   width: 100%;
   border-radius: 1rem;
 }
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .content {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    min-width: 360px;
+  }
+  
+  .image {
+    min-width: 100%;
+  }
+  
+  .title h1 {
+    font-size: var(--text-2xl);
+  }
+}
 </style>

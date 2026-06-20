@@ -185,4 +185,41 @@ hr {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .blocks {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    height: auto;
+    padding: 2rem 0;
+  }
+  
+  .blocks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+  
+  .block {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    padding: 0 1rem;
+  }
+  
+  .social {
+    justify-content: flex-start;
+  }
+  
+  img {
+    width: 160px;
+    height: auto;
+  }
+}
 </style>

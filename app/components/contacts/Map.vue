@@ -101,9 +101,4 @@ onBeforeUnmount(() => {
 }
 
 
-@media (max-width: 768px) {
-  .map {
-    height: 380px !important;
-  }
-}
 </style>

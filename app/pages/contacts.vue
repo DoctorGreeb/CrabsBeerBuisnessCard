@@ -45,4 +45,21 @@
     min-height: 800px;
 }
 
+@media (max-width: 1024px) {
+    .contacts-block, .map-block {
+        width: 100%;
+        min-height: auto;
+        max-height: none;
+        padding: 0 1rem;
+    }
+    .main-block {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .contacts-block {
+        padding: 0;
+    }
+}
+
 </style>

@@ -97,4 +97,49 @@
     font-size: var(--text-xl);
     font-family: var(--font-sans);
 }
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .content {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .logo img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    height: 120px;
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    margin-left: 0;
+  }
+  
+  .logo img {
+    width: 180px;
+  }
+  
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .link, .button {
+    margin: 0;
+  }
+  
+  .link a, .button a {
+    font-size: var(--text-base);
+  }
+}
 </style>
