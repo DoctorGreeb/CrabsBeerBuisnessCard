@@ -99,9 +99,18 @@
 }
 
 /* Адаптив */
+
+@media (max-width: 1390px) {
+  .content {
+        padding: 2rem 3rem;
+  }
+  
+}
+
 @media (max-width: 1024px) {
   .content {
     gap: 1.5rem;
+        padding: 2rem 1rem;
   }
 }
 

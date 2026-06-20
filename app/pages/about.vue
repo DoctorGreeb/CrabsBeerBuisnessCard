@@ -3,6 +3,7 @@
     <AboutStory />
     <AboutStoryText />
     <AboutTeam />
+    <AboutYaReviews />
 </template>
 
 <script setup>

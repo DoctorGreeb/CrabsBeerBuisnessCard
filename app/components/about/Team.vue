@@ -157,7 +157,7 @@ const playVideo = (index) => {
 
 /* Адаптив */
 
-@media (max-width: 1360px) {
+@media (max-width: 1390px) {
   .reviews-grid {
     grid-template-columns: repeat(3, 300px);
     gap: 1rem;
@@ -169,7 +169,7 @@ const playVideo = (index) => {
     max-height: 400px;
   }
   .title {
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
 }
 
