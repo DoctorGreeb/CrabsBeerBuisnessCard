@@ -31,9 +31,11 @@
           <div class="contacts">
             <p>+7 (989) 501-85-85</p>
             <p>+7 (904) 501-86-86</p>
-            <NuxtLink to="https://yandex.ru/maps/-/CPxqAC5D">
-              <p>Берберовская ул., 8, стр. 1, Ростов-на-Дону</p>
-            </NuxtLink>
+            <div class="address">
+              <NuxtLink to="https://yandex.ru/maps/-/CPxqAC5D">
+                Берберовская ул., 8, стр. 1, Ростов-на-Дону
+              </NuxtLink>
+            </div>
           </div>
         </div>
         <div class="block">
@@ -119,6 +121,22 @@
 }
 
 .links a {
+  color: var(--color-amber-100);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.address a {
+  color: var(--color-amber-100);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.address {
   color: var(--color-amber-100);
   text-decoration: none;
   font-size: var(--text-base);
