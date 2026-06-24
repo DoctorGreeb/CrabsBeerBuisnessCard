@@ -95,6 +95,7 @@
   width: 80px;
   height: 80px;
   margin-bottom: 1rem;
+  filter: brightness(1) saturate(1) hue-rotate(182deg) contrast(1.05);
 }
 
 .text {

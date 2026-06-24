@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
     height: 90px;
-    background-color: var(--color-amber-900);
+    background-color: var(--color-amber-800);
 }
 
 .content {

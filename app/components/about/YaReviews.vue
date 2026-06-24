@@ -73,7 +73,7 @@ body {
   justify-content: center;
   border-radius: 12px;
   overflow: hidden;
-  background-color: var(--color-amber-100);
+  background-color: var(--color-amber-50);
 }
 
 .title::before {
@@ -87,10 +87,9 @@ body {
   background-size: 60px 60px;
   background-repeat: space;
   background-position: center;
-  filter: brightness(1.8) saturate(5.8) hue-rotate(2deg) contrast(0.8)
-    sepia(0.5);
+  filter: brightness(1.5) saturate(1) hue-rotate(182deg) contrast(1.05) sepia(0.5);
   z-index: 0;
-  pointer-events: none; /* Чтобы не мешать кликам */
+  pointer-events: none;
 }
 
 .title > * {
